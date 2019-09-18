@@ -37,16 +37,14 @@
               Cosmetics
             </nuxt-link>
           </li>
-
           <li>
-            <div
-              v-if="cartCount > 0"
-              class="carttotal"
-            >
-              {{ cartCount }}
-            </div>
+            <nuxt-link to="/men">
+              Cosmetics
+            </nuxt-link>
+          </li>
+          <li>
             <nuxt-link to="/cart">
-              <i class="fas fa-shopping-cart" />
+              Cosmetics
             </nuxt-link>
           </li>
         </ul>
@@ -63,7 +61,7 @@ export default {
   },
   data () {
     return {
-      cartCount: 5
+
     }
   },
   mounted () {
@@ -128,7 +126,7 @@ nav {
       font-size: 13px;
       padding: 0 20px;
       border-left: 1px solid #ddd;
-      border-right: 1px solid #ddd;
+      // border-right: 1px solid #ddd;
       position: relative;
       a {
         color: $blackColor;
@@ -139,22 +137,7 @@ nav {
     }
   }
 }
-.carttotal {
-  position: absolute;
-  border-radius: 1000px;
-  background: $primaryColor;
-  color: white;
-  font-size: 10px;
-  padding: 3px;
-  top: -18px;
-  right: -5px;
-  width: 25px;
-  text-align: center;
-  height: 25px;
-  font-size: 10px;
-  padding: 6px 10px;
-  font-weight: bold;
-}
+
 @media screen and (max-width: 850px) {
   h1 {
     margin: 0;
