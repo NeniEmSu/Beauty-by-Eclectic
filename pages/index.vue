@@ -1,24 +1,27 @@
 <template>
   <div>
-    <TheHeader />
     <TheTopCarousel />
     <TheFeaturedCategory />
     <TheOnSale />
+    <TheNewProducts />
+    <TheSiteFeatures />
   </div>
 </template>
 
 <script>
 
-import TheHeader from '~/components/TheHeader.vue'
 import TheTopCarousel from '~/components/TheTopCarousel.vue'
 import TheFeaturedCategory from '~/components/TheFeaturedCategory.vue'
 import TheOnSale from '~/components/TheOnSale.vue'
+import TheNewProducts from '~/components/TheNewProducts.vue'
+import TheSiteFeatures from '~/components/TheSiteFeatures.vue'
 export default {
   components: {
-    TheHeader,
     TheTopCarousel,
     TheFeaturedCategory,
-    TheOnSale
+    TheOnSale,
+    TheNewProducts,
+    TheSiteFeatures
   }
 }
 </script>

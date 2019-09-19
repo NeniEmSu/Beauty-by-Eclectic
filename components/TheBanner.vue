@@ -150,6 +150,9 @@ export default {
     opened () {
       this.isActive = !this.isActive
     },
+    onClick () {
+      this.isActive = false
+    },
     closeSearch () {
       this.isActive = false
     }
