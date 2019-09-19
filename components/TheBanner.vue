@@ -5,11 +5,11 @@
         <strong class="my-auto">FREE SHIPPING</strong> US ORDERS OVER $25
       </p>
 
-      <ul class="my-auto">
+      <ul class="my-auto linksList">
         <li
           v-click-outside="closeSearch"
           v-handle-scroll="closeSearch"
-          class="my-auto"
+          class="my-auto links"
         >
           <span
             class="search"
@@ -39,17 +39,84 @@
             </button>
           </span>
         </li>
-        <li class="my-auto">
+        <li class="my-auto links">
           <nuxt-link to="#">
-            <i class="fas fa-globe" />
+            <b-dropdown
+              size="md"
+              variant="link"
+              toggle-class="text-decoration-none"
+              no-caret
+            >
+              <template v-slot:button-content>
+                <i class="fas fa-globe" /><span class="sr-only">Globe</span>
+              </template>
+              <b-dropdown-item href="#">
+                language
+              </b-dropdown-item>
+              <b-dropdown-item href="#">
+                Currency
+              </b-dropdown-item>
+              <b-dropdown-item href="#">
+                Country
+              </b-dropdown-item>
+            </b-dropdown>
           </nuxt-link>
         </li>
-        <li class="my-auto">
+        <li class="my-auto links">
           <nuxt-link to="#">
-            <i class="fas fa-user" />
+            <b-dropdown
+              id="dropdown-form"
+              ref="dropdown"
+              variant="link"
+              toggle-class="text-decoration-none"
+              no-caret
+            >
+              <template v-slot:button-content>
+                <i class="fas fa-user" /><span class="sr-only">User</span>
+              </template>
+              <b-dropdown-form>
+                <b-form-group
+                  label="Email"
+                  label-for="dropdown-form-email"
+                  @submit.stop.prevent
+                >
+                  <b-form-input
+                    id="dropdown-form-email"
+                    size="sm"
+                    placeholder="email@example.com"
+                  />
+                </b-form-group>
+
+                <b-form-group
+                  label="Password"
+                  label-for="dropdown-form-password"
+                >
+                  <b-form-input
+                    id="dropdown-form-password"
+                    type="password"
+                    size="sm"
+                    placeholder="Password"
+                  />
+                </b-form-group>
+
+                <b-form-checkbox class="mb-3">
+                  Remember me
+                </b-form-checkbox>
+                <b-button
+                  variant="primary"
+                  size="sm"
+                  @click="onClick"
+                >
+                  Sign In
+                </b-button>
+              </b-dropdown-form>
+              <b-dropdown-divider />
+              <b-dropdown-item-button>New around here? Sign up</b-dropdown-item-button>
+              <b-dropdown-item-button>Forgot Password?</b-dropdown-item-button>
+            </b-dropdown>
           </nuxt-link>
         </li>
-        <li class="my-auto">
+        <li class="my-auto links">
           <div
             v-if="cartCount > 0"
             class="carttotal"
@@ -107,12 +174,12 @@ export default {
   align-items: center;
 }
 
-ul {
+ul.linksList {
   padding-left: 0;
   margin-left: auto;
   list-style: none;
 
-  li {
+  li.links {
     display: inline;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -144,15 +211,13 @@ ul {
   border-radius: 1000px;
   background: $primaryColor;
   color: white;
-  font-size: 10px;
-  padding: 3px;
-  top: -18px;
-  right: -5px;
-  width: 25px;
+  top: -12px;
+  right: 0px;
+  width: 20px;
   text-align: center;
-  height: 25px;
-  font-size: 14px;
-  padding: 2px 8.5px;
+  height: 20px;
+  font-size: 12px;
+  padding: 0px 3px;
   font-weight: bold;
 }
 
@@ -161,7 +226,7 @@ ul {
   border: none;
 }
 
-input {
+input.searchTerm {
   border: none;
   padding: 0 5px;
 

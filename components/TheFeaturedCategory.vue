@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-4 imageBox">
           <img
-            src="~/assets/img/hair.jpg"
+            src="~/assets/img/material.jpg"
             alt="hair"
           >
         </div>
@@ -39,7 +39,6 @@ export default {
     position: relative;
     margin: auto;
     overflow: hidden;
-    width: 540px;
 
     &:hover img {
       transform: scale(1.1);
@@ -47,7 +46,7 @@ export default {
   }
 
   img {
-    max-width: 100%;
+    object-fit: cover;
     display: block;
     width: 100%;
     height: auto;
