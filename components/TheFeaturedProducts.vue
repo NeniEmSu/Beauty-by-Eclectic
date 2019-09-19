@@ -1,12 +1,12 @@
 <template>
-  <section class="onSale text-center">
+  <section class="featuredProducts text-center">
     <div class="container">
       <nuxt-link
         to="#"
         class="title-box"
       >
         <h2>
-          On Sale
+          Featured
         </h2>
       </nuxt-link>
       <div class="row">
@@ -301,7 +301,6 @@
     color: inherit;
     text-decoration: none;
   }
-
   h2 {
     font-size: 24px;
   }

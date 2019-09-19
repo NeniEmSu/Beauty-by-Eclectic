@@ -1,29 +1,35 @@
 <template>
   <section class="newProducts text-center">
     <div class="container">
-      <div class="title-box">
+      <nuxt-link
+        to="#"
+        class="title-box"
+      >
         <h2>
           New Arrivals
         </h2>
-      </div>
+      </nuxt-link>
       <div class="row">
         <div class="col-md-3">
           <div class="productTop">
-            <img
-              src="~/assets/img/hairProduct.jpg"
-              alt="hero"
-            >
+            <nuxt-link to="/product">
+              <img
+                src="~/assets/img/hairProduct.jpg"
+                alt="hero"
+              >
+            </nuxt-link>
             <div class="overlayRight">
-              <button
+              <b-button
                 type="button"
                 class="btn btn-secondary"
                 title="Quick Shop"
+                to="/product"
               >
                 <i
                   class="fas fa-eye"
                   aria-hidden="true"
                 />
-              </button>
+              </b-button>
               <button
                 type="button"
                 class="btn btn-secondary"
@@ -74,21 +80,24 @@
 
         <div class="col-md-3">
           <div class="productTop">
-            <img
-              src="~/assets/img/hairProduct.jpg"
-              alt="hero"
-            >
+            <nuxt-link to="/product">
+              <img
+                src="~/assets/img/hairProduct.jpg"
+                alt="hero"
+              >
+            </nuxt-link>
             <div class="overlayRight">
-              <button
+              <b-button
                 type="button"
                 class="btn btn-secondary"
                 title="Quick Shop"
+                to="/product"
               >
                 <i
                   class="fas fa-eye"
                   aria-hidden="true"
                 />
-              </button>
+              </b-button>
               <button
                 type="button"
                 class="btn btn-secondary"
@@ -139,21 +148,24 @@
 
         <div class="col-md-3">
           <div class="productTop">
-            <img
-              src="~/assets/img/hairProduct.jpg"
-              alt="hero"
-            >
+            <nuxt-link to="/product">
+              <img
+                src="~/assets/img/hairProduct.jpg"
+                alt="hero"
+              >
+            </nuxt-link>
             <div class="overlayRight">
-              <button
+              <b-button
                 type="button"
                 class="btn btn-secondary"
                 title="Quick Shop"
+                to="/product"
               >
                 <i
                   class="fas fa-eye"
                   aria-hidden="true"
                 />
-              </button>
+              </b-button>
               <button
                 type="button"
                 class="btn btn-secondary"
@@ -204,21 +216,24 @@
 
         <div class="col-md-3">
           <div class="productTop">
-            <img
-              src="~/assets/img/hairProduct.jpg"
-              alt="hero"
-            >
+            <nuxt-link to="/product">
+              <img
+                src="~/assets/img/hairProduct.jpg"
+                alt="hero"
+              >
+            </nuxt-link>
             <div class="overlayRight">
-              <button
+              <b-button
                 type="button"
                 class="btn btn-secondary"
                 title="Quick Shop"
+                to="/product"
               >
                 <i
                   class="fas fa-eye"
                   aria-hidden="true"
                 />
-              </button>
+              </b-button>
               <button
                 type="button"
                 class="btn btn-secondary"
@@ -269,21 +284,24 @@
 
         <div class="col-md-3">
           <div class="productTop">
-            <img
-              src="~/assets/img/hairProduct.jpg"
-              alt="hero"
-            >
+            <nuxt-link to="/product">
+              <img
+                src="~/assets/img/hairProduct.jpg"
+                alt="hero"
+              >
+            </nuxt-link>
             <div class="overlayRight">
-              <button
+              <b-button
                 type="button"
                 class="btn btn-secondary"
                 title="Quick Shop"
+                to="/product"
               >
                 <i
                   class="fas fa-eye"
                   aria-hidden="true"
                 />
-              </button>
+              </b-button>
               <button
                 type="button"
                 class="btn btn-secondary"
@@ -334,21 +352,24 @@
 
         <div class="col-md-3">
           <div class="productTop">
-            <img
-              src="~/assets/img/hairProduct.jpg"
-              alt="hero"
-            >
+            <nuxt-link to="/product">
+              <img
+                src="~/assets/img/hairProduct.jpg"
+                alt="hero"
+              >
+            </nuxt-link>
             <div class="overlayRight">
-              <button
+              <b-button
                 type="button"
                 class="btn btn-secondary"
                 title="Quick Shop"
+                to="/product"
               >
                 <i
                   class="fas fa-eye"
                   aria-hidden="true"
                 />
-              </button>
+              </b-button>
               <button
                 type="button"
                 class="btn btn-secondary"
@@ -399,21 +420,24 @@
 
         <div class="col-md-3">
           <div class="productTop">
-            <img
-              src="~/assets/img/hairProduct.jpg"
-              alt="hero"
-            >
+            <nuxt-link to="/product">
+              <img
+                src="~/assets/img/hairProduct.jpg"
+                alt="hero"
+              >
+            </nuxt-link>
             <div class="overlayRight">
-              <button
+              <b-button
                 type="button"
                 class="btn btn-secondary"
                 title="Quick Shop"
+                to="/product"
               >
                 <i
                   class="fas fa-eye"
                   aria-hidden="true"
                 />
-              </button>
+              </b-button>
               <button
                 type="button"
                 class="btn btn-secondary"
@@ -464,21 +488,24 @@
 
         <div class="col-md-3">
           <div class="productTop">
-            <img
-              src="~/assets/img/hairProduct.jpg"
-              alt="hero"
-            >
+            <nuxt-link to="/product">
+              <img
+                src="~/assets/img/hairProduct.jpg"
+                alt="hero"
+              >
+            </nuxt-link>
             <div class="overlayRight">
-              <button
+              <b-button
                 type="button"
                 class="btn btn-secondary"
                 title="Quick Shop"
+                to="/product"
               >
                 <i
                   class="fas fa-eye"
                   aria-hidden="true"
                 />
-              </button>
+              </b-button>
               <button
                 type="button"
                 class="btn btn-secondary"
@@ -540,7 +567,12 @@
   height: 40px;
   margin-bottom: 30px;
   display: flex;
+  text-decoration: none;
 
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
   h2 {
     font-size: 24px;
   }

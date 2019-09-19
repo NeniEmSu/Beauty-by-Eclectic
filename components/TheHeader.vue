@@ -6,8 +6,12 @@
       class="navbar"
     >
       <div class="container">
-        <nuxt-link to="/">
+        <nuxt-link
+          class="imgWrapper"
+          to="/"
+        >
           <img
+            loading="lazy"
             src="~/assets/img/Beauty-By-Eclectic-Logo.jpg"
             alt="Logo img"
           >
@@ -23,28 +27,24 @@
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/all">
+            <nuxt-link to="#">
               Shop
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/women">
+            <nuxt-link to="#">
               Hair
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/men">
-              Cosmetics
+            <nuxt-link to="#">
+              skin Care
             </nuxt-link>
           </li>
-          <li>
-            <nuxt-link to="/men">
-              Cosmetics
-            </nuxt-link>
-          </li>
+
           <li>
             <nuxt-link to="/cart">
-              Cosmetics
+              Fabrics
             </nuxt-link>
           </li>
         </ul>
@@ -69,7 +69,7 @@ export default {
       window.addEventListener('scroll', function () {
         const navbar = document.getElementById('nav')
         const navClasses = navbar.classList
-        if (document.documentElement.scrollTop >= 500) {
+        if (document.documentElement.scrollTop >= 100) {
           if (navClasses.contains('shrink') === false) {
             navClasses.toggle('shrink')
           }
@@ -111,8 +111,24 @@ nav {
   align-items: center;
 
   padding: 8px 0;
+
+  .imgWrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid $primaryColor;
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
   img {
+    border-radius: 50%;
+    border: 1px solid $primaryColor;
     height: 100px;
+    display: block;
+    transform: scale(1);
+    transition: 1s;
   }
 
   ul {
@@ -123,12 +139,14 @@ nav {
       display: inline;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      font-size: 13px;
-      padding: 0 20px;
-      border-left: 1px solid #ddd;
-      // border-right: 1px solid #ddd;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 0 15px;
+      // border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
       position: relative;
       a {
+        text-decoration: none;
         color: $blackColor;
         &:hover {
           color: $primaryColor;
