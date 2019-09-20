@@ -1,27 +1,30 @@
 <template>
   <div>
-    <TheTopCarousel />
-    <TheFeaturedCategory />
+    <TheHero />
+    <TheSummerCollection />
     <TheOnSale />
     <TheNewProducts />
     <TheSiteFeatures />
+    <TheSubscription />
   </div>
 </template>
 
 <script>
 
-import TheTopCarousel from '~/components/TheTopCarousel.vue'
-import TheFeaturedCategory from '~/components/TheFeaturedCategory.vue'
+import TheHero from '~/components/TheHero.vue'
+import TheSummerCollection from '~/components/TheSummerCollection.vue'
 import TheOnSale from '~/components/TheOnSale.vue'
 import TheNewProducts from '~/components/TheNewProducts.vue'
 import TheSiteFeatures from '~/components/TheSiteFeatures.vue'
+import TheSubscription from '~/components/TheSubscription.vue'
 export default {
   components: {
-    TheTopCarousel,
-    TheFeaturedCategory,
+    TheHero,
+    TheSummerCollection,
     TheOnSale,
     TheNewProducts,
-    TheSiteFeatures
+    TheSiteFeatures,
+    TheSubscription
   }
 }
 </script>

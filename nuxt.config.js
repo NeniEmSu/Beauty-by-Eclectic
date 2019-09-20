@@ -1,3 +1,10 @@
+import data from './static/storedata.json'
+const dynamicRoutes = () => {
+  return new Promise((resolve) => {
+    resolve(data.map(el => `product/${el.id}`))
+  })
+}
+
 export default {
   mode: 'universal',
 
@@ -48,6 +55,10 @@ export default {
 
     '@nuxtjs/eslint-module'
   ],
+
+  generate: {
+    routes: dynamicRoutes
+  },
 
   modules: [
     'bootstrap-vue/nuxt',

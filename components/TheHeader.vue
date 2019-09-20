@@ -90,8 +90,8 @@ header {
   align-items: center;
 }
 nav.shrink {
-  padding: 4px;
-  background: #ffffff;
+  padding: 1px;
+  background: $whiteColor;
 
   -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
@@ -100,6 +100,18 @@ nav.shrink {
   img {
     height: 80px;
     width: auto;
+  }
+
+  ul {
+    li {
+      a {
+        text-decoration: none;
+        color: $darkColor;
+        &:hover {
+          color: $primaryColor;
+        }
+      }
+    }
   }
 }
 
@@ -110,7 +122,7 @@ nav {
   justify-content: center;
   align-items: center;
 
-  padding: 8px 0;
+  padding: 2px 0;
 
   .imgWrapper {
     position: relative;
@@ -142,12 +154,13 @@ nav {
       font-size: 14px;
       font-weight: bold;
       padding: 0 15px;
-      // border-left: 1px solid #ddd;
+      color: #ddd;
+
       border-right: 1px solid #ddd;
       position: relative;
       a {
         text-decoration: none;
-        color: $blackColor;
+        color: $lightColor;
         &:hover {
           color: $primaryColor;
         }

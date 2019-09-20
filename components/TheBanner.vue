@@ -124,7 +124,7 @@
             {{ cartCount }}
           </div>
           <nuxt-link to="#">
-            <i class="fas fa-shopping-cart" />
+            <i class="fas fa-shopping-cart shopingCartIcon" />
           </nuxt-link>
         </li>
       </ul>
@@ -211,17 +211,25 @@ ul.linksList {
 
 .carttotal {
   position: absolute;
-  border-radius: 1000px;
+  border-radius: 0px;
   background: $primaryColor;
   color: white;
-  top: -12px;
-  right: 0px;
-  width: 20px;
+  top: -10px;
+  right: 18.5px;
+  width: 15px;
   text-align: center;
-  height: 20px;
-  font-size: 12px;
+  height: 15px;
+  transform: rotate(-50deg);
+  font-size: 10px;
   padding: 0px 3px;
   font-weight: bold;
+  z-index: 0;
+}
+
+i.shopingCartIcon {
+  position: relative;
+  z-index: 2;
+  opacity: 1;
 }
 
 .searchButton {

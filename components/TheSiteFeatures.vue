@@ -62,8 +62,8 @@
 
 <style lang="scss">
 .siteFeatures {
-  margin: 60px 0;
-  background-image: url(~assets/img/featuresBG.jpg);
+  margin: 60px 0 0 0;
+  background-image: url(~assets/img/callout.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

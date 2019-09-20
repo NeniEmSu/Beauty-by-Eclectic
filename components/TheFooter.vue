@@ -131,7 +131,6 @@
 
 <style lang="scss">
 .footer {
-  margin-top: 50px;
   background-color: $darkColor;
   color: $lightColor;
 
