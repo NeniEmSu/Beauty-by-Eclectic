@@ -40,15 +40,28 @@ export default {
   css: [
     'normalize.css/normalize.css',
     'aos/dist/aos.css',
-    '@/assets/css/styles.css'
+    '@/assets/css/styles.css',
+    {
+      src: '~/assets/scss/main.scss',
+      lang: 'sass'
+    }
   ],
 
   plugins: [{
     src: '~/plugins/aos.js',
     mode: 'client'
   },
-
-  '~/plugins/globalComponents'
+  '~/plugins/vuelidate.js',
+  '~/plugins/vue-scrollto.js',
+  '~/plugins/globalComponents',
+  {
+    src: '~/plugins/vue-page-transition',
+    ssr: true
+  },
+  {
+    src: '~/plugins/vuex-persist',
+    mode: 'client'
+  }
   ],
 
   buildModules: [
@@ -65,8 +78,121 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/netlify-files',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    ['nuxt-i18n', {
+      seo: true,
+      baseUrl: 'https://barbaresco.netlify.com',
+      locales: [{
+        iso: 'uk-Uk',
+        code: 'uk',
+        name: 'Українська'
+      },
+      {
+        iso: 'en-US',
+        code: 'en',
+        name: 'English'
+      },
+      {
+        iso: 'ru-RU',
+        code: 'ru',
+        name: 'Русский'
+      }
+      ]
+    }],
+    [
+      'vue-currency-filter/nuxt',
+      {
+        name: 'currency',
+        symbol: '$',
+        thousandsSeparator: ',',
+        fractionCount: 2,
+        fractionSeparator: '.',
+        symbolPosition: 'front',
+        symbolSpacing: false
+      }
+    ]
   ],
+
+  i18n: {
+    defaultLocale: 'uk',
+    vueI18nLoader: true,
+    lazy: false,
+    langDir: null,
+    strategy: 'prefix_except_default',
+    parsePages: true,
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      alwaysRedirect: false,
+      fallbackLocale: 'uk'
+    },
+    vueI18n: {
+      fallbackLocale: 'uk',
+      messages: {
+        uk: {
+          'links': {
+            'home': 'Головна',
+            'menu': 'Меню',
+            'delivery': 'Доставка їжі',
+            'reserveAPlace': 'Резервація місця',
+            'reservation': 'Резервація',
+            'aboutUs': 'Про нас',
+            'atmosphere': 'Атмосфера',
+            'vacancy': 'Ваканції',
+            'contact': 'Контакти'
+          },
+          'order': 'Замовити',
+          'ukrainian': 'Українська',
+          'english': 'English',
+          'russian': 'Русский'
+        },
+        en: {
+          'links': {
+            'home': 'Home',
+            'menu': 'Menu',
+            'delivery': 'Food delivery',
+            'reserveAPlace': 'Reservation of place',
+            'reservation': 'Reservation',
+            'aboutUs': 'About us',
+            'atmosphere': 'Atmosphere',
+            'vacancy': 'Vacancies',
+            'contact': 'Contacts',
+            'kitchen': 'Kitchen'
+          },
+          'ukrainian': 'Українська',
+          'english': 'English',
+          'russian': 'Русский',
+          'order': 'Order'
+        },
+        ru: {
+
+          'links': {
+            'home': 'Главная',
+            'menu': 'Меню',
+            'delivery': 'Доставка еды',
+            'reserveAPlace': 'Резервация места',
+            'reservation': 'Резервация',
+            'aboutUs': 'О нас',
+            'atmosphere': 'Атмосфера',
+            'vacancy': 'Вакансии',
+            'contact': 'Контакты',
+            'kitchen': 'Кухня'
+          },
+          'ukrainian': 'Українська',
+          'english': 'English',
+          'russian': 'Русский',
+          'order': 'Заказать'
+        }
+
+      }
+    }
+  },
+
+  proxy: {
+    '/.netlify/functions/': {
+      target: 'http://localhost:8000'
+    }
+  },
 
   axios: {},
 

@@ -10,20 +10,28 @@
         </h2>
       </nuxt-link>
       <div class="row">
-        <div class="col-md-3">
+        <div
+          v-for="product in featuredProducts"
+          :key="product.id"
+          class="col-md-3"
+        >
           <div class="productTop">
-            <nuxt-link to="/product">
+            <nuxt-link :to="`/product/${product.id}`">
               <img
+                :src="`/products/${product.img}`"
+                :alt="product.name"
+              >
+              <!-- <img
                 src="~/assets/img/hairProduct.jpg"
                 alt="hero"
-              >
+              > -->
             </nuxt-link>
             <div class="overlayRight">
               <b-button
                 type="button"
                 class="btn btn-secondary"
                 title="Quick Shop"
-                to="/product"
+                :to="`/product/${product.id}`"
               >
                 <i
                   class="fas fa-eye"
@@ -53,32 +61,19 @@
             </div>
           </div>
           <div class="productBottom">
-            <i
-              class="fa fa-star"
-              aria-hidden="true"
+            <star-rating
+              :rating="product.starrating"
+              active-color="#000"
+              :star-size="15"
+              :show-rating="false"
+              style="margin: 5px 0"
             />
-            <i
-              class="fa fa-star"
-              aria-hidden="true"
-            />
-            <i
-              class="fa fa-star"
-              aria-hidden="true"
-            />
-            <i
-              class="fa fa-star"
-              aria-hidden="true"
-            />
-            <i
-              class="fa fa-star-half"
-              aria-hidden="true"
-            />
-            <h3>Kinky Marley Extensions</h3>
-            <h5>$20.00</h5>
+            <h3>{{ product.name }}</h3>
+            <h5>{{ product.price | currency }}</h5>
           </div>
         </div>
 
-        <div class="col-md-3">
+        <!-- <div class="col-md-3">
           <div class="productTop">
             <nuxt-link to="/product">
               <img
@@ -280,11 +275,21 @@
             <h3>Kinky Marley Extensions</h3>
             <h5>$20.00</h5>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  computed: {
+    featuredProducts () {
+      return this.$store.getters.featuredProducts
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 .title-box {

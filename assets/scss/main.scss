@@ -1,126 +1,9 @@
-<template>
-  <div class="storegrid">
-    <transition-group
-      name="items"
-      tag="section"
-      class="content"
-    >
-      <div
-        v-for="item in filteredprice"
-        :key="item.id"
-        class="item"
-      >
-        <div class="img-contain">
-          <NuxtLink :to="`product/${item.id}`">
-            <img :src="`/products/${item.img}`">
-          </NuxtLink>
-        </div>
-        <star-rating
-          :rating="item.starrating"
-          active-color="#F2306F"
-          :star-size="15"
-          :show-rating="false"
-          style="margin: 5px 0"
-        />
-        <h3>{{ item.name }}</h3>
-        <h4 class="price">
-          {{ item.price | currency }}
-        </h4>
-        <NuxtLink :to="`product/${item.id}`">
-          <button class="multi-item">
-            View Item >
-          </button>
-        </NuxtLink>
-      </div>
-    </transition-group>
-    <aside>
-      <h3>Special Sale</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam libero iusto nemo laboriosam perferendis voluptas ullam officiis, quibusdam quas quam eveniet est fugit delectus corporis incidunt nam esse suscipit itaque?</p>
-      <h3>Filter by Price:</h3>
-      <p style="margin-top: 5px">
-        Max Price
-        <strong>${{ pricerange }}</strong>
-      </p>
-      <input
-        id="pricerange"
-        v-model="pricerange"
-        class="slider"
-        type="range"
-        :min="min"
-        :max="max"
-        step="0.1"
-      >
-      <span class="min">${{ min }}</span>
-      <span class="max">${{ max }}</span>
-    </aside>
-  </div>
-</template>
-
-<script>
-import StarRating from 'vue-star-rating/src/star-rating.vue'
-
-export default {
-  components: {
-    StarRating
-  },
-  props: {
-    data: {
-      type: Array,
-      required: true
-    }
-  },
-  data () {
-    return {
-      min: 0,
-      max: 200,
-      pricerange: 200
-    }
-  },
-  computed: {
-    filteredprice () {
-      return this.data.filter(el => el.price < this.pricerange)
-    }
-  }
-}
-</script>
-
-<style lang="scss" scoped>
-.storegrid {
-  margin-top: 200px;
-}
-
-.content {
-  height: 100%;
-  width: 100%;
-}
-
-.img-contain {
-  max-height: 200px;
-  display: flex;
-  align-content: center;
-  align-items: center;
-  img {
-    width: 100%;
-  }
-}
-
-.item {
-  max-height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 20px 0;
-}
-
-aside {
-  height: 100%;
-  width: 100%;
-}
-
-.max {
-  // display: inline-block;
-  float: right;
+a,
+a:active,
+a:visited {
+  color: $brandprimary;
+  text-decoration: none;
+  transition: 0.3s all ease;
 }
 
 button {
@@ -130,9 +13,8 @@ button {
   cursor: pointer;
   color: black;
   font-weight: 700;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
-  transition: 0.3s all ease;
+
+
   &:hover {
     background: black;
     border: 1px solid black;
@@ -141,10 +23,11 @@ button {
 }
 
 button.purchase {
-  background: $brandprimary;
+  background: $primaryColor;
   color: white;
   font-size: 16px;
   border: none;
+
   &:hover {
     background: #c14103;
   }
@@ -155,6 +38,7 @@ button.pay-with-stripe {
   color: white;
   font-size: 16px;
   border: none;
+
   &:hover {
     background: #c14103;
   }
@@ -374,4 +258,3 @@ input[type="range"].slider:focus::-ms-fill-lower {
 input[type="range"].slider:focus::-ms-fill-upper {
   background: $brandprimary;
 }
-</style>

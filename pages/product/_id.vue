@@ -1,23 +1,89 @@
 <template>
-  <div>
-    <section class="item-contain">
-      <section class="img">
-        <img :src="`/products/${product.img}`">
+  <div
+    id="individualProduct"
+    class="container"
+  >
+    <section class=" row">
+      <section class=" col-md-5">
+        <div>
+          <!-- <img :src="`/products/${product.img}`"> -->
+          <b-carousel
+            id="carousel-1"
+            v-model="slide"
+            :interval="4000"
+            fade
+            controls
+            background="#ababab"
+            img-height="350"
+            style="text-shadow: 1px 1px 2px #333;"
+            @sliding-start="onSlideStart"
+            @sliding-end="onSlideEnd"
+          >
+            <b-carousel-slide>
+              <template v-slot:img>
+                <img
+                  class="d-block img-fluid w-100"
+                  width="1024"
+                  height="480"
+                  src="~/assets/img/hairProduct.jpg"
+                  alt="image slot"
+                >
+              </template>
+            </b-carousel-slide>
+
+            <b-carousel-slide>
+              <template v-slot:img>
+                <img
+                  class="d-block img-fluid w-100"
+                  width="1024"
+                  height="350"
+                  src="~/assets/img/hair2.jpg"
+                  alt="image slot"
+                >
+              </template>
+            </b-carousel-slide>
+
+            <b-carousel-slide>
+              <template v-slot:img>
+                <img
+                  class="d-block img-fluid w-100"
+                  width="1024"
+                  height="350"
+                  :src="`/products/${product.img}`"
+                  alt="image slot"
+                >
+              </template>
+            </b-carousel-slide>
+          </b-carousel>
+        </div>
       </section>
-      <section class="product-info">
+      <section class="col-md-7">
+        <p class="newArrivals text-center">
+          New
+        </p>
         <h1>{{ product.name }}</h1>
+        <p><b>Product code:</b> KJ552FFI</p>
         <star-rating
           :rating="product.starrating"
           :star-size="15"
           :show-rating="false"
-          active-color="#000"
+          active-color="#F2306F"
           style="margin: 5px 0"
         />
         <h4 class="price">
-          {{ product.price | dollar }}
+          {{ product.price | currency }}
         </h4>
-        <p>{{ product.description }}</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto velit dolores repudiandae animi quidem, eveniet quod dolor facilis dicta eligendi ullam error. Assumenda in fugiat natus enim similique nam itaque.</p>
+
+        <p>
+          <b>Availability:</b> In Stock
+        </p>
+        <p>
+          <b>Condition:</b> New
+        </p>
+        <p>
+          <b>Brand:</b> McBucyano
+        </p>
+
         <p class="quantity">
           <button
             class="update-num"
@@ -54,6 +120,9 @@
     </section>
     <hr>
     <div class="review">
+      <h2>Product Description</h2>
+      <p>{{ product.description }}</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto velit dolores repudiandae animi quidem, eveniet quod dolor facilis dicta eligendi ullam error. Assumenda in fugiat natus enim similique nam itaque.</p>
       <h2>Reviews</h2>
       <!-- maybe an image of a person? -->
       <star-rating
@@ -65,20 +134,22 @@
       />
       <p>{{ product.review }}</p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iusto placeat consequatur voluptas sit mollitia ratione autem, atque sequi odio laborum, recusandae quia distinctio voluptatibus sint, quae aliquid possimus exercitationem.</p>
+
+      <hr>
     </div>
-    <app-featured-products />
+    <TheFeaturedProducts />
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
 import StarRating from 'vue-star-rating/src/star-rating.vue'
-import AppFeaturedProducts from '~/components/AppFeaturedProducts.vue'
+import TheFeaturedProducts from '~/components/TheFeaturedProducts.vue'
 
 export default {
   components: {
     StarRating,
-    AppFeaturedProducts
+    TheFeaturedProducts
   },
   data () {
     return {
@@ -105,6 +176,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#individualProduct {
+  margin-top: 200px;
+}
+
 .item-contain {
   margin-left: 8%;
   width: 80%;
@@ -130,6 +205,68 @@ input {
 
 .quantity {
   display: flex;
+}
+
+.singleProduct {
+  margin-top: 70px;
+
+  i {
+    color: $primaryColor;
+  }
+
+  .price {
+    color: $primaryColor;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+  }
+
+  input {
+    border: 1px solid #ddd;
+    font-weight: bold;
+    height: 33px;
+    text-align: center;
+    width: 30px;
+  }
+
+  .btn-primary {
+    background-color: $primaryColor;
+    color: #fff;
+    font-size: 15px;
+    margin-left: 20px;
+    border: none;
+  }
+}
+
+.newArrivals {
+  background-color: green;
+  width: 50px;
+  color: white;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+h2 {
+  color: #555;
+}
+
+.productDescription {
+  h6 {
+    margin-top: 50px;
+    columns: $primaryColor;
+  }
+
+  p {
+    margin-top: 30px;
+  }
+
+  hr {
+    margin-bottom: 50px;
+  }
+}
+
+hr {
+  border: 1px solid #ddd;
 }
 
 @media screen and (max-width: 650px) {

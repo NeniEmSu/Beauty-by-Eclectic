@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="cart">
     <app-cart-steps />
     <hr>
     <h1 class="center">
@@ -63,6 +63,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#cart {
+  margin-top: 200px;
+}
+
 .loader {
   display: flex;
   justify-content: center;

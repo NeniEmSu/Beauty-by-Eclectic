@@ -129,6 +129,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import clickOutside from '@/directives/click-outside'
 import handleScroll from '@/directives/handle-scroll'
 export default {
@@ -138,9 +139,12 @@ export default {
   },
   data () {
     return {
-      cartCount: 5,
+
       isActive: false
     }
+  },
+  computed: {
+    ...mapGetters(['cartCount'])
   },
   methods: {
     opened () {

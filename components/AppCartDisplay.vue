@@ -24,13 +24,13 @@
           </td>
           <td>
             <h4 class="price">
-              {{ item.price | dollar }}
+              {{ item.price | currency }}
             </h4>
           </td>
           <td>
             <strong>{{ item.quantity }}</strong>
           </td>
-          <td>{{ item.quantity * item.price | dollar }}</td>
+          <td>{{ item.quantity * item.price | currency }}</td>
         </tr>
       </table>
 
@@ -48,11 +48,11 @@
           </div>
           <div class="num">
             <p>
-              <strong>{{ cartTotal | dollar }}</strong>
+              <strong>{{ cartTotal | currency }}</strong>
             </p>
             <p>Free Shipping</p>
             <p class="golden">
-              {{ cartTotal | dollar }}
+              {{ cartTotal | currency }}
             </p>
           </div>
         </div>
