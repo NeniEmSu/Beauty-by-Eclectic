@@ -4,7 +4,7 @@
     <nuxt />
     <TheFooter />
     <div class="back-to-top">
-      <a href="#nav"> <img
+      <a href="#header-hero"> <img
         title="Back to Top."
         src="https://res.cloudinary.com/de8cuyd0n/image/upload/v1520412541/E-commerce%20landing%20page/icons/back_-_top_1x.png"
         alt="back to top"
@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import TheHeader from '~/components/TheHeader.vue'
-import TheFooter from '~/components/TheFooter.vue'
+import TheHeader from '~/components/TheHeader'
+import TheFooter from '~/components/TheFooter'
 export default {
   components: {
     TheHeader,
@@ -34,6 +34,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 *,
@@ -76,7 +80,7 @@ i {
   right: 2%;
   z-index: 2;
   opacity: 0.2;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .back-to-top:hover {

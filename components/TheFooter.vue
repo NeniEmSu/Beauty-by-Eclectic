@@ -1,8 +1,8 @@
 <template>
-  <section class="footer">
+  <section class="footer text-center">
     <div class="container ">
       <div class="row">
-        <div class="col-md-3 d-block">
+        <div class="col-sm-3 d-block">
           <h4>Useful Links</h4>
           <p>
             <nuxt-link
@@ -38,7 +38,7 @@
           </p>
         </div>
 
-        <div class="col-md-3 d-block">
+        <div class="col-sm-3 d-block">
           <h4>Navigation</h4>
           <p>
             <nuxt-link
@@ -74,7 +74,7 @@
           </p>
         </div>
 
-        <div class="col-md-3 d-block">
+        <div class="col-sm-3 d-block">
           <h4>Find Us On Social Media</h4>
           <p>
             <nuxt-link
@@ -110,10 +110,10 @@
           </p>
         </div>
 
-        <div class="col-md-3 d-block footerImage">
+        <div class="col-sm-3 d-block footerImage">
           <h4>Payment options</h4>
           <img
-            class="d-block "
+            class="d-block mx-auto"
             src="~/assets/img/payment-options.png"
             alt="card options"
           >

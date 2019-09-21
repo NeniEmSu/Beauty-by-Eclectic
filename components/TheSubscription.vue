@@ -1,7 +1,7 @@
 <template>
   <section
     id="subscription"
-    class="jumbotron"
+    class="jumbotron mb-0"
   >
     <div class="container">
       <h4>Subscribe To Our News Letter</h4>
@@ -60,20 +60,20 @@
     outline: none;
   }
   input[type="email"] {
-    background-color: #1b162c;
-    border: solid #1b162c;
-    color: #59546a;
+    background-color: $darkColor;
+    border: solid $darkColor;
+    color: $lightColor;
   }
 
   input[type="submit"] {
-    background-color: #614ce6;
-    border: solid #614ce6;
+    background-color: $primaryColor;
+    border: solid $primaryColor;
     color: white;
     margin-left: -80px;
   }
 
   ::selection {
-    background-color: #614ce6;
+    background-color: $primaryColor;
   }
 }
 </style>

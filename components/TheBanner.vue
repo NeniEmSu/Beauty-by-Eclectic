@@ -5,8 +5,8 @@
         <strong class="my-auto">FREE SHIPPING</strong> US ORDERS OVER $25
       </p>
 
-      <ul class="my-auto linksList">
-        <li
+      <div class="my-auto linksList">
+        <div
           v-click-outside="closeSearch"
           v-handle-scroll="closeSearch"
           class="my-auto links"
@@ -38,96 +38,92 @@
               <i class="fas fa-search" />
             </button>
           </span>
-        </li>
-        <li class="my-auto links">
-          <nuxt-link to="#">
-            <b-dropdown
-              size="md"
-              variant="link"
-              toggle-class="text-decoration-none"
-              no-caret
-            >
-              <template v-slot:button-content>
-                <i class="fas fa-globe" /><span class="sr-only">Globe</span>
-              </template>
-              <b-dropdown-item href="#">
-                language
-              </b-dropdown-item>
-              <b-dropdown-item href="#">
-                Currency
-              </b-dropdown-item>
-              <b-dropdown-item href="#">
-                Country
-              </b-dropdown-item>
-            </b-dropdown>
-          </nuxt-link>
-        </li>
-        <li class="my-auto links">
-          <nuxt-link to="#">
-            <b-dropdown
-              id="dropdown-form"
-              ref="dropdown"
-              variant="link"
-              toggle-class="text-decoration-none"
-              no-caret
-            >
-              <template v-slot:button-content>
-                <i class="fas fa-user" /><span class="sr-only">User</span>
-              </template>
-              <b-dropdown-form>
-                <b-form-group
-                  label="Email"
-                  label-for="dropdown-form-email"
-                  @submit.stop.prevent
-                >
-                  <b-form-input
-                    id="dropdown-form-email"
-                    size="sm"
-                    placeholder="email@example.com"
-                  />
-                </b-form-group>
-
-                <b-form-group
-                  label="Password"
-                  label-for="dropdown-form-password"
-                >
-                  <b-form-input
-                    id="dropdown-form-password"
-                    type="password"
-                    size="sm"
-                    placeholder="Password"
-                  />
-                </b-form-group>
-
-                <b-form-checkbox class="mb-3">
-                  Remember me
-                </b-form-checkbox>
-                <b-button
-                  variant="primary"
+        </div>
+        <div class="my-auto links">
+          <b-dropdown
+            size="md"
+            variant="link"
+            toggle-class="text-decoration-none"
+            no-caret
+          >
+            <template v-slot:button-content>
+              <i class="fas fa-globe" /><span class="sr-only">Globe</span>
+            </template>
+            <b-dropdown-item href="#">
+              language
+            </b-dropdown-item>
+            <b-dropdown-item href="#">
+              Currency
+            </b-dropdown-item>
+            <b-dropdown-item href="#">
+              Country
+            </b-dropdown-item>
+          </b-dropdown>
+        </div>
+        <div class="my-auto links">
+          <b-dropdown
+            id="dropdown-form"
+            ref="dropdown"
+            variant="link"
+            toggle-class="text-decoration-none"
+            no-caret
+          >
+            <template v-slot:button-content>
+              <i class="fas fa-user" /><span class="sr-only">User</span>
+            </template>
+            <b-dropdown-form>
+              <b-form-group
+                label="Email"
+                label-for="dropdown-form-email"
+                @submit.stop.prevent
+              >
+                <b-form-input
+                  id="dropdown-form-email"
                   size="sm"
-                  @click="onClick"
-                >
-                  Sign In
-                </b-button>
-              </b-dropdown-form>
-              <b-dropdown-divider />
-              <b-dropdown-item-button>New around here? Sign up</b-dropdown-item-button>
-              <b-dropdown-item-button>Forgot Password?</b-dropdown-item-button>
-            </b-dropdown>
-          </nuxt-link>
-        </li>
-        <li class="my-auto links">
+                  placeholder="email@example.com"
+                />
+              </b-form-group>
+
+              <b-form-group
+                label="Password"
+                label-for="dropdown-form-password"
+              >
+                <b-form-input
+                  id="dropdown-form-password"
+                  type="password"
+                  size="sm"
+                  placeholder="Password"
+                />
+              </b-form-group>
+
+              <b-form-checkbox class="mb-3">
+                Remember me
+              </b-form-checkbox>
+              <b-button
+                variant="primary"
+                size="sm"
+                @click="onClick"
+              >
+                Sign In
+              </b-button>
+            </b-dropdown-form>
+            <b-dropdown-divider />
+            <b-dropdown-item-button>New around here? Sign up</b-dropdown-item-button>
+            <b-dropdown-item-button>Forgot Password?</b-dropdown-item-button>
+          </b-dropdown>
+        </div>
+        <div class="my-auto links">
           <div
             v-if="cartCount > 0"
             class="carttotal"
           >
             {{ cartCount }}
           </div>
-          <nuxt-link to="#">
+          <nuxt-link to="/cart">
             <i class="fas fa-shopping-cart shopingCartIcon" />
           </nuxt-link>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -177,12 +173,12 @@ export default {
   align-items: center;
 }
 
-ul.linksList {
+div.linksList {
   padding-left: 0;
   margin-left: auto;
   list-style: none;
 
-  li.links {
+  div.links {
     display: inline;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -221,6 +217,7 @@ ul.linksList {
   height: 15px;
   transform: rotate(-50deg);
   font-size: 10px;
+  font-weight: bold;
   padding: 0px 3px;
   font-weight: bold;
   z-index: 0;
@@ -253,6 +250,40 @@ input.searchTerm {
   &.open {
     border-left: 1px solid #ddd;
     width: 100px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  div.linksList {
+    padding-left: 0;
+    margin-left: auto;
+    list-style: none;
+
+    div.links {
+      display: inline;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 13px;
+      padding: 0 5px;
+      border-right: none;
+      position: relative;
+      list-style: none;
+      text-decoration: none;
+      a,
+      span {
+        color: $blackColor;
+        text-decoration: none;
+        &:hover {
+          color: $primaryColor;
+        }
+      }
+      i {
+        color: $lightColor;
+        &:hover {
+          color: $primaryColor;
+        }
+      }
+    }
   }
 }
 </style>

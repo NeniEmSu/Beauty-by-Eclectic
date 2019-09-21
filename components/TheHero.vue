@@ -11,9 +11,9 @@
         <p class="heading-1">
           Beauty, Cosmetics & Personal Care
         </p>
-        <h1>wellcome to Beauty <span class="logo-style">By</span> Eclectic</h1>
-        <p class="description">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        <h1>wellcome to Beauty By Eclectic</h1>
+        <p class="description text-center">
+          Beautity By Eclectic deriving ideas, style, or taste from a broad and diverse range of sources to make you fabulous.
         </p>
         <b-button
           class="button"
@@ -60,7 +60,7 @@
 #header-hero .header-content p.heading-1 {
   text-transform: uppercase;
   margin: 0 auto;
-  font-family: "Lato", sans-serif;
+
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 2vw;
@@ -69,9 +69,9 @@
 
 #header-hero .header-content h1 {
   margin: 0 auto;
-  font-family: "Lato", sans-serif;
+
   font-size: 3rem;
-  font-style: italic;
+  font-style: normal;
   text-transform: uppercase;
   margin-bottom: 2.4vw;
 }
@@ -83,9 +83,9 @@
 #header-hero .header-content p.description {
   margin: 0 auto;
   width: 30%;
-  font-family: Cambria;
+
   font-size: 1.4rem;
-  font-style: italic;
+  font-style: normal;
   margin-bottom: 5vw;
 }
 
@@ -96,6 +96,7 @@
   box-shadow: 0px 1px 3.84px 0.16px rgba(0, 0, 0, 0.35);
   width: 10rem;
   padding: 0.8rem;
+  border-radius: 0;
 
   &:hover {
     background-color: #fff;
@@ -103,7 +104,6 @@
 }
 
 #header-hero .header-content .button {
-  font-family: Cambria;
   font-size: 1rem;
   font-weight: 400;
   text-align: justify;
@@ -126,35 +126,69 @@
 @media only screen and (max-width: 1024px) {
   #header-hero .header-bg {
     width: 100%;
-    height: auto;
+    height: 100vh;
     overflow: hidden;
   }
   #header-hero .header-bg img {
     width: 100rem;
-    height: 40rem;
+    height: 100vh;
     margin-left: -50%;
   }
   #header-hero .header-content p.heading-1 {
-    padding-top: 20vw;
+    padding-top: 25vw;
   }
   #header-hero .header-content p.description {
-    width: 60%;
+    width: 70%;
     margin-bottom: 4rem;
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 520px) {
+  #header-hero .header-content p.heading-1 {
+    font-size: 1rem;
+    padding-top: 40vw;
+  }
+
   #header-hero .header-content h1 {
     font-size: 2rem;
     padding: 1rem 0rem;
   }
   #header-hero .header-bg img {
     width: 100rem;
-    height: 40rem;
+    height: 100vh;
     margin-left: -140%;
   }
   #header-hero .header-content p.description {
-    width: 50%;
+    width: 80%;
+    margin-bottom: 3rem;
+    text-align: left;
+  }
+  button {
+    width: 8rem;
+    padding: 0.6rem;
+  }
+  #header-hero .header-content .button {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #header-hero .header-content p.heading-1 {
+    font-size: 1rem;
+    padding-top: 50vw;
+  }
+
+  #header-hero .header-content h1 {
+    font-size: 2rem;
+    padding: 1rem 0rem;
+  }
+  #header-hero .header-bg img {
+    width: 100rem;
+    height: 100vh;
+    margin-left: -140%;
+  }
+  #header-hero .header-content p.description {
+    width: 80%;
     margin-bottom: 3rem;
     text-align: left;
   }

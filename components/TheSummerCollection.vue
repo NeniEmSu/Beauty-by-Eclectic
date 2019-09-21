@@ -105,11 +105,11 @@
     flex-direction: column;
   }
   #summer-collection .container .sc-content {
-    width: 80vw;
-    padding: 8rem 2rem 2rem;
+    width: 100%;
+    padding: 8rem 0rem 0rem;
   }
   #summer-collection .container .sc-media {
-    width: 80vw;
+    width: 100%;
   }
   #summer-collection .container .sc-content h1 {
     font-size: 5.6vw;
@@ -132,8 +132,8 @@
     font-size: 1rem;
     line-height: 1.8rem;
     margin-bottom: 4vw;
-    padding-right: 1.2rem;
-    text-align: justify;
+    padding-right: 0rem;
+    text-align: left;
     margin-bottom: 2rem;
   }
 }
