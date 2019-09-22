@@ -178,7 +178,7 @@ header {
 }
 nav.shrink {
   padding: 1px;
-  background: $whiteColor;
+  background: $lightColor;
 
   -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
@@ -240,14 +240,12 @@ nav {
       letter-spacing: 0.1em;
       font-size: 14px;
       font-weight: bold;
-      padding: 0 15px;
-      color: #ddd;
-
-      border-right: 1px solid #ddd;
+      padding: 0 0 0 20px;
+      // border-right: 1px solid #ddd;
       position: relative;
       a {
         text-decoration: none;
-        color: gray;
+        color: rgb(168, 167, 167);
         &:hover {
           color: $primaryColor;
         }
@@ -383,7 +381,7 @@ nav {
   font-size: 30px;
   line-height: 35px;
 
-  color: #000000;
+  color: $blackColor;
 
   margin-right: 50px;
 }
@@ -397,7 +395,7 @@ nav {
   transform: translateX(-100%);
 
   padding: 30px 50px;
-  background: white;
+  background: $lightColor;
 
   height: 100vh;
   width: 300px;

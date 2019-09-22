@@ -1,8 +1,8 @@
 <template>
-  <section class="footer text-center">
+  <section class="footer ">
     <div class="container ">
       <div class="row">
-        <div class="col-sm-3 d-block">
+        <div class="col-sm-3 col-6 d-block">
           <h4>Useful Links</h4>
           <p>
             <nuxt-link
@@ -38,7 +38,7 @@
           </p>
         </div>
 
-        <div class="col-sm-3 d-block">
+        <div class="col-sm-3 col-6 d-block">
           <h4>Navigation</h4>
           <p>
             <nuxt-link
@@ -74,7 +74,7 @@
           </p>
         </div>
 
-        <div class="col-sm-3 d-block">
+        <div class="col-sm-3 col-6 d-block">
           <h4>Find Us On Social Media</h4>
           <p>
             <nuxt-link
@@ -92,28 +92,12 @@
               <i class="fab fa-instagram" />Intstagram
             </nuxt-link>
           </p>
-          <p>
-            <nuxt-link
-              class="d-block"
-              to="#"
-            >
-              <i class="fab fa-twitter-square" />Twitter
-            </nuxt-link>
-          </p>
-          <p>
-            <nuxt-link
-              class="d-block"
-              to="#"
-            >
-              <i class="fab fa-linkedin" />Linkedin
-            </nuxt-link>
-          </p>
         </div>
 
-        <div class="col-sm-3 d-block footerImage">
+        <div class="col-sm-3 col-6 d-block footerImage">
           <h4>Payment options</h4>
           <img
-            class="d-block mx-auto"
+            class="d-block "
             src="~/assets/img/payment-options.png"
             alt="card options"
           >

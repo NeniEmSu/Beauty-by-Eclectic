@@ -33,14 +33,13 @@
   height: auto;
 
   h4 {
-    color: $darkColor;
-    font-size: 1.125rem;
+    color: $blackColor;
     font-weight: 400;
     letter-spacing: 0.056rem;
     text-align: center;
     text-transform: uppercase;
-    padding-top: 3rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   p {
@@ -49,7 +48,7 @@
     font-weight: 400;
     letter-spacing: 0.044rem;
     text-align: center;
-    padding: 0.2rem 0rem;
+    // padding: 0.2rem 0rem;
   }
 
   label {
@@ -80,7 +79,38 @@
     background-color: $primaryColor;
   }
 }
-@media only screen and (max-width: 480px) {
+
+@media only screen and (min-width: 501px) and (max-width: 990px) {
+  #subscription {
+    label {
+      width: 60%;
+    }
+
+    input[type="submit"] {
+      background-color: $primaryColor;
+      border: solid $primaryColor;
+      color: white;
+      margin-left: -80px;
+    }
+  }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 500px) {
+  #subscription {
+    label {
+      width: 80%;
+    }
+
+    input[type="submit"] {
+      background-color: $primaryColor;
+      border: solid $primaryColor;
+      color: white;
+      margin-left: -40px;
+    }
+  }
+}
+
+@media only screen and (max-width: 349px) {
   #subscription {
     label {
       width: 100%;
@@ -92,11 +122,6 @@
       color: white;
       margin: auto;
     }
-  }
-}
-@media only screen and (max-width: 1200px) {
-  #subscription label {
-    width: 70%;
   }
 }
 </style>

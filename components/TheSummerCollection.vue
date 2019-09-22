@@ -18,7 +18,7 @@
             alt="Photo of an africn woman in an african print head gear by Oladimeji Odunsi on Unsplash"
           >
           <a
-            style="background-color:#F2306F;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
+            style="background-color:#F2306F;color:white;text-decoration:none;padding:10px 10px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:0px;boder:none;outline:none;"
             href="https://unsplash.com/@oladimeg?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
             target="_blank"
             rel="noopener noreferrer"

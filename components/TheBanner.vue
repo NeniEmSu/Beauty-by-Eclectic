@@ -2,7 +2,7 @@
   <div class="banners">
     <div class="banner container">
       <p class="my-auto d-none d-md-flex">
-        <strong class="my-auto">FREE SHIPPING</strong> US ORDERS OVER $25
+        <strong class="my-auto">FREE SHIPPING FOR ORDERS OVER $300</strong>
       </p>
 
       <div class="my-auto linksList">

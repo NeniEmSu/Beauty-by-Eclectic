@@ -24,6 +24,12 @@
                 :src="`/products/${product.img}`"
                 :alt="product.name"
               >
+              <b-badge
+                class="badge"
+                variant="dark"
+              >
+                New
+              </b-badge>
               <!-- <img
                 src="~/assets/img/hairProduct.jpg"
                 alt="hero"
@@ -171,113 +177,7 @@ export default {
   margin: 3rem 0rem;
 }
 
-.title-box {
-  background-color: $primaryColor;
-  color: #fff;
-  width: 180px;
-  padding: 4px 10px;
-  height: 40px;
-  margin-bottom: 30px;
-  display: flex;
-  text-decoration: none;
-
-  &:hover {
-    color: inherit;
-    text-decoration: none;
-  }
-  h2 {
-    font-size: 24px;
-  }
-
-  &::after {
-    content: "";
-    border-top: 40px solid $primaryColor;
-    border-right: 50px solid transparent;
-    position: absolute;
-    display: flex;
-    margin-top: -4px;
-    margin-left: 170px;
-  }
-}
-
-.productTop {
-  img {
-    width: 100%;
-  }
-
-  &:hover .overlayRight {
-    opacity: 1;
-    margin-left: 5%;
-    transition: 500ms;
-  }
-
-  .overlayRight {
-    display: block;
-    opacity: 0;
-    position: absolute;
-    top: 10%;
-    margin-left: 0;
-    width: 70px;
-
-    i {
-      cursor: pointer;
-      background-color: #fff;
-      color: #000;
-      height: 35px;
-      width: 35px;
-      font-size: 20px;
-      padding: 7px;
-      margin-top: 5%;
-      margin-bottom: 5%;
-
-      &:hover {
-        color: $primaryColor;
-      }
-    }
-
-    .btn-secondary {
-      background: none !important;
-      border: none !important;
-      box-shadow: none !important;
-    }
-  }
-}
-
-.productBottom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  i {
-    color: $primaryColor;
-    font-size: 10px;
-  }
-
-  h3 {
-    color: $blackColor;
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  h5 {
-    color: $darkColor;
-    font-size: 15px;
-    padding-bottom: 10px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .productTop {
-    .overlayRight {
-      display: block;
-      opacity: 1;
-      position: absolute;
-      top: 10%;
-      margin-left: 5%;
-      width: 70px;
-    }
-  }
-}
+@import "~assets/scss/productCard.scss";
 
 @media only screen and (max-width: 574px) {
   .container {

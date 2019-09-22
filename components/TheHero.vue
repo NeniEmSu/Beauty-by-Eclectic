@@ -3,9 +3,23 @@
     <div id="header-hero">
       <div class="header-bg">
         <img
-          src="https://res.cloudinary.com/de8cuyd0n/image/upload/v1520412561/E-commerce%20landing%20page/header/header-image_3x.jpg"
-          alt="header-image"
+          src="~/assets/img/Beauty-By-Eclectic-Hero.jpg"
+          alt="3 beautiful african women Photo by Eloise Ambursley on Unsplash"
         >
+        <a
+          style="background-color:#F2306F;color:white;text-decoration:none;padding:10px 10px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:0px;boder:none;outline:none;"
+          href="https://unsplash.com/@e_ambursley?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Download free do whatever you want high-resolution photos from Eloise Ambursley"
+        ><span style="display:inline-block;padding:2px 3px"><svg
+          xmlns="http://www.w3.org/2000/svg"
+          style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white"
+          viewBox="0 0 32 32"
+        >
+          <title>unsplash-logo</title>
+          <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z" />
+        </svg></span><span style="display:inline-block;padding:2px 3px">Eloise Ambursley</span></a>
       </div>
       <div class="header-content">
         <p class="heading-1">
