@@ -1,7 +1,9 @@
 <template>
   <div>
     <TheHeader />
-    <nuxt />
+    <main>
+      <nuxt />
+    </main>
     <TheFooter />
     <div class="back-to-top">
       <a href="#header-hero"> <img
@@ -88,5 +90,9 @@ i {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
   background-color: rgba(255, 255, 255, 0.4);
   opacity: 1;
+}
+
+main {
+  min-height: 100vh;
 }
 </style>

@@ -79,6 +79,12 @@
         <b-nav-item to="/">
           Home
         </b-nav-item>
+        <b-nav-item to="/about-us">
+          About Us
+        </b-nav-item>
+        <b-nav-item to="/Contact Us">
+          Contact Us
+        </b-nav-item>
         <b-nav-item to="/shop">
           Shop
         </b-nav-item>

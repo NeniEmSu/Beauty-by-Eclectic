@@ -7,15 +7,15 @@
           <p>
             <nuxt-link
               class="d-block"
-              to="#"
+              to="/faqs"
             >
-              Faq
+              Faqs
             </nuxt-link>
           </p>
           <p>
             <nuxt-link
               class="d-block"
-              to="#"
+              to="terms-of-use"
             >
               Terms of use
             </nuxt-link>
@@ -23,7 +23,7 @@
           <p>
             <nuxt-link
               class="d-block"
-              to="#"
+              to="/privacy-policy"
             >
               Privacy Policy
             </nuxt-link>
@@ -31,7 +31,7 @@
           <p>
             <nuxt-link
               class="d-block"
-              to="#"
+              to="/return-policy"
             >
               Return Policy
             </nuxt-link>
@@ -43,7 +43,7 @@
           <p>
             <nuxt-link
               class="d-block"
-              to="#"
+              to="/"
             >
               Home
             </nuxt-link>
@@ -51,7 +51,7 @@
           <p>
             <nuxt-link
               class="d-block"
-              to="#"
+              to="/shop"
             >
               Shop
             </nuxt-link>
@@ -59,7 +59,7 @@
           <p>
             <nuxt-link
               class="d-block"
-              to="#"
+              to="/about-us"
             >
               About Us
             </nuxt-link>
@@ -67,7 +67,7 @@
           <p>
             <nuxt-link
               class="d-block"
-              to="#"
+              to="contact-us"
             >
               Contact Us
             </nuxt-link>
@@ -80,16 +80,29 @@
             <nuxt-link
               class="d-block"
               to="#"
+              target="_blank"
             >
-              <i class="fab fa-facebook-square" />Facebook
+              <i class="fab fa-facebook-square" /> Facebook
             </nuxt-link>
           </p>
           <p>
             <nuxt-link
               class="d-block"
-              to="#"
+              to="https://www.instagram.com/EBEAUTY_EMPIRE/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <i class="fab fa-instagram" />Intstagram
+              <i class="fab fa-instagram" /> Ebeauty Empire
+            </nuxt-link>
+          </p>
+          <p>
+            <nuxt-link
+              class="d-block"
+              to="https://www.instagram.com/ECLECTIC_ACCESSORY/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-instagram" /> Eclectic Accessories
             </nuxt-link>
           </p>
         </div>
@@ -105,7 +118,13 @@
       </div>
       <hr>
       <div class="mx-auto text-center copyright">
-        &copy;2019 - {{ new Date().getFullYear() }} —
+        &copy;2019 - {{ new Date().getFullYear() }} — by <a
+          href="#"
+          style="color: #F2306F;"
+          target="_blank"
+          rel="noopener noreferrer"
+        >NeniEmSu</a>
+        @
         <strong>Beauty by eclectic</strong>
         All rights reserved
       </div>
@@ -119,13 +138,13 @@
   color: $lightColor;
 
   h4 {
-    font-size: 15px;
+    font-size: 22px;
     margin: 25px 0;
   }
 
   a,
   i {
-    font-size: 12px;
+    font-size: 18px;
     color: $lightColor;
   }
 }
@@ -146,5 +165,26 @@ hr {
   text-align: center;
   font-size: 15px;
   padding-bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    h4 {
+      font-size: 15px;
+      margin: 25px 0;
+    }
+
+    a,
+    i {
+      font-size: 12px;
+    }
+  }
+
+  .footerImage {
+    img {
+      height: auto;
+      width: 100px;
+    }
+  }
 }
 </style>

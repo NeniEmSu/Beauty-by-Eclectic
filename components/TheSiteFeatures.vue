@@ -30,9 +30,9 @@
           <div class="featureBoxInner">
             <i class="fas fa-undo-alt fa-2x" />
             <div class="featureText">
-              <h5>EASY RETURNS</h5>
+              <h5>No RETURNS</h5>
               <p class="d-none d-sm-block">
-                30 Days
+                All Sales Are Final
               </p>
             </div>
           </div>
