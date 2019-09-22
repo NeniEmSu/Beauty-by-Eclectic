@@ -48,23 +48,23 @@
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="#">
+            <nuxt-link to="/shop">
               Shop
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="#">
+            <nuxt-link to="/hair">
               Hair
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="#">
+            <nuxt-link to="/skin-care">
               skin Care
             </nuxt-link>
           </li>
 
           <li>
-            <nuxt-link to="/cart">
+            <nuxt-link to="/fabrics">
               Fabrics
             </nuxt-link>
           </li>
@@ -76,20 +76,20 @@
       :class="{'navbar-toggle-open': mobileNavOpen}"
     >
       <b-navbar-nav class="mt-5">
-        <b-nav-item to="#">
+        <b-nav-item to="/">
           Home
         </b-nav-item>
-        <b-nav-item to="#">
+        <b-nav-item to="/shop">
           Shop
         </b-nav-item>
-        <b-nav-item to="#">
+        <b-nav-item to="/hair">
           Hair
         </b-nav-item>
 
-        <b-nav-item to="#">
+        <b-nav-item to="/skin-care">
           skin Care
         </b-nav-item>
-        <b-nav-item to="#">
+        <b-nav-item to="/fabrics">
           Fabrics
         </b-nav-item>
       </b-navbar-nav>
@@ -400,10 +400,9 @@ nav {
   background: white;
 
   height: 100vh;
-  width: 100vw;
+  width: 300px;
   left: 0;
   top: 0px;
-  text-align: center;
 }
 
 .btn-hamburger {

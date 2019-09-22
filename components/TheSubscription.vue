@@ -52,6 +52,10 @@
     padding: 0.2rem 0rem;
   }
 
+  label {
+    width: 30%;
+  }
+
   input[type="email"],
   input[type="submit"] {
     border-radius: 45px;
@@ -74,6 +78,25 @@
 
   ::selection {
     background-color: $primaryColor;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #subscription {
+    label {
+      width: 100%;
+    }
+
+    input[type="submit"] {
+      background-color: $primaryColor;
+      border: solid $primaryColor;
+      color: white;
+      margin: auto;
+    }
+  }
+}
+@media only screen and (max-width: 1200px) {
+  #subscription label {
+    width: 70%;
   }
 }
 </style>

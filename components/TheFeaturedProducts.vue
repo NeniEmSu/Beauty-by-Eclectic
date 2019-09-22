@@ -1,14 +1,11 @@
 <template>
   <section class="featuredProducts text-center">
     <div class="container">
-      <nuxt-link
-        to="#"
-        class="title-box"
-      >
+      <div class="title-box">
         <h2>
           Featured
         </h2>
-      </nuxt-link>
+      </div>
       <div class="row">
         <div
           v-for="product in featuredProducts"
@@ -61,228 +58,32 @@
             </div>
           </div>
           <div class="productBottom">
-            <star-rating
-              :rating="product.starrating"
-              active-color="#000"
-              :star-size="15"
-              :show-rating="false"
-              style="margin: 5px 0"
-            />
+            <div class="mx-auto d-inline text-center">
+              <star-rating
+                :rating="product.starrating"
+                active-color="#F2306F"
+                :star-size="15"
+                :show-rating="true"
+                :increment="0.5"
+                :star-points="[23,2, 14,17, 0,19, 10,34, 7,50, 23,43, 38,50, 36,34, 46,19, 31,17]"
+                style="margin: 5px 0"
+              />
+            </div>
             <h3>{{ product.name }}</h3>
             <h5>{{ product.price | currency }}</h5>
           </div>
         </div>
-
-        <!-- <div class="col-md-3">
-          <div class="productTop">
-            <nuxt-link to="/product">
-              <img
-                src="~/assets/img/hairProduct.jpg"
-                alt="hero"
-              >
-            </nuxt-link>
-            <div class="overlayRight">
-              <b-button
-                type="button"
-                class="btn btn-secondary"
-                title="Quick Shop"
-                to="/product"
-              >
-                <i
-                  class="fas fa-eye"
-                  aria-hidden="true"
-                />
-              </b-button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                title="Quick Shop"
-              >
-                <i
-                  class="fa fa-heart-o"
-                  aria-hidden="true"
-                />
-              </button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                title="Add to cart"
-              >
-                <i
-                  class="fa fa-shopping-bag"
-                  aria-hidden="true"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="productBottom">
-            <i
-              class="fa fa-star"
-              aria-hidden="true"
-            />
-            <i
-              class="fa fa-star"
-              aria-hidden="true"
-            />
-            <i
-              class="fa fa-star"
-              aria-hidden="true"
-            />
-            <i
-              class="fa fa-star"
-              aria-hidden="true"
-            />
-            <i
-              class="fa fa-star-half"
-              aria-hidden="true"
-            />
-            <h3>Kinky Marley Extensions</h3>
-            <h5>$20.00</h5>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="productTop">
-            <nuxt-link to="/product">
-              <img
-                src="~/assets/img/hairProduct.jpg"
-                alt="hero"
-              >
-            </nuxt-link>
-            <div class="overlayRight">
-              <b-button
-                type="button"
-                class="btn btn-secondary"
-                title="Quick Shop"
-                to="/product"
-              >
-                <i
-                  class="fas fa-eye"
-                  aria-hidden="true"
-                />
-              </b-button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                title="Quick Shop"
-              >
-                <i
-                  class="fa fa-heart-o"
-                  aria-hidden="true"
-                />
-              </button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                title="Add to cart"
-              >
-                <i
-                  class="fa fa-shopping-bag"
-                  aria-hidden="true"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="productBottom">
-            <i
-              class="fa fa-star"
-              aria-hidden="true"
-            />
-            <i
-              class="fa fa-star"
-              aria-hidden="true"
-            />
-            <i
-              class="fa fa-star"
-              aria-hidden="true"
-            />
-            <i
-              class="fa fa-star-o"
-              aria-hidden="true"
-            />
-            <i
-              class="fa fa-star-o"
-              aria-hidden="true"
-            />
-            <h3>Kinky Marley Extensions</h3>
-            <h5>$20.00</h5>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="productTop">
-            <nuxt-link to="/product">
-              <img
-                src="~/assets/img/hairProduct.jpg"
-                alt="hero"
-              >
-            </nuxt-link>
-            <div class="overlayRight">
-              <b-button
-                type="button"
-                class="btn btn-secondary"
-                title="Quick Shop"
-                to="/product"
-              >
-                <i
-                  class="fas fa-eye"
-                  aria-hidden="true"
-                />
-              </b-button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                title="Quick Shop"
-              >
-                <i
-                  class="fa fa-heart-o"
-                  aria-hidden="true"
-                />
-              </button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                title="Add to cart"
-              >
-                <i
-                  class="fa fa-shopping-bag"
-                  aria-hidden="true"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="productBottom">
-            <i
-              class="fa fa-star"
-              aria-hidden="true"
-            />
-            <i
-              class="fa fa-star"
-              aria-hidden="true"
-            />
-            <i
-              class="fa fa-star"
-              aria-hidden="true"
-            />
-            <i
-              class="fa fa-star-half"
-              aria-hidden="true"
-            />
-            <i
-              class="fa fa-star-o"
-              aria-hidden="true"
-            />
-            <h3>Kinky Marley Extensions</h3>
-            <h5>$20.00</h5>
-          </div>
-        </div> -->
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import StarRating from 'vue-star-rating/src/star-rating.vue'
 export default {
+  components: {
+    StarRating
+  },
   computed: {
     featuredProducts () {
       return this.$store.getters.featuredProducts
@@ -302,10 +103,6 @@ export default {
   display: flex;
   text-decoration: none;
 
-  &:hover {
-    color: inherit;
-    text-decoration: none;
-  }
   h2 {
     font-size: 24px;
   }
@@ -365,6 +162,10 @@ export default {
 }
 
 .productBottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   i {
     color: $primaryColor;
     font-size: 10px;
@@ -380,6 +181,19 @@ export default {
     color: $darkColor;
     font-size: 15px;
     padding-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .productTop {
+    .overlayRight {
+      display: block;
+      opacity: 1;
+      position: absolute;
+      top: 10%;
+      margin-left: 5%;
+      width: 70px;
+    }
   }
 }
 </style>

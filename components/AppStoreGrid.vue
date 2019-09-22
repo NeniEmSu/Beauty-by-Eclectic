@@ -1,5 +1,5 @@
 <template>
-  <div class="storegrid">
+  <div class="storegrid container">
     <transition-group
       name="items"
       tag="section"
@@ -26,19 +26,22 @@
         <h4 class="price">
           {{ item.price | currency }}
         </h4>
-        <NuxtLink :to="`product/${item.id}`">
-          <button class="multi-item">
-            View Item >
-          </button>
-        </NuxtLink>
       </div>
     </transition-group>
     <aside>
-      <h3>Special Sale</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam libero iusto nemo laboriosam perferendis voluptas ullam officiis, quibusdam quas quam eveniet est fugit delectus corporis incidunt nam esse suscipit itaque?</p>
+      <h3>Filter by Products:</h3>
+      <nuxt-link to="/shop">
+        All
+      </nuxt-link><br>
+      <nuxt-link to="/men">
+        Men
+      </nuxt-link><br>
+      <nuxt-link to="/women">
+        Women
+      </nuxt-link>
       <h3>Filter by Price:</h3>
       <p style="margin-top: 5px">
-        Max Price
+        Max Price <br>
         <strong>${{ pricerange }}</strong>
       </p>
       <input
@@ -164,40 +167,6 @@ button.pay-with-stripe {
   }
 }
 
-.price {
-  color: $brandprimary;
-  font-size: 20px;
-  margin: 5px 0;
-  font-weight: normal;
-  font-family: "PT Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-}
-
-hr {
-  border-top: 1px solid #eee;
-  margin: 30px 0;
-}
-
-label {
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  margin-top: 20px;
-  display: inline-block;
-}
-
-input {
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  padding: 5px 10px;
-}
-
-.center {
-  text-align: center;
-}
-
 /*------------  Store Grid   -----------*/
 
 .storegrid {
@@ -207,12 +176,6 @@ input {
   grid-template-rows: 1fr;
   grid-column-gap: 40px;
   grid-row-gap: 0px;
-}
-
-/* no grid support */
-aside {
-  float: left;
-  width: 19.1489%;
 }
 
 .content {

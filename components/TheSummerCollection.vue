@@ -2,19 +2,35 @@
   <section id="summer-collection">
     <div class="container">
       <div class="sc-content">
-        <h1>summer collection</h1>
+        <h2>African Print collection</h2>
         <p class="description">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
           has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
         </p>
-        <a href="#">discover now</a>
+        <nuxt-link to="/fabrics">
+          Discover now
+        </nuxt-link>
       </div>
       <div class="sc-media">
         <div class="sc-media-bg">
           <img
-            src="https://res.cloudinary.com/de8cuyd0n/image/upload/v1520412556/E-commerce%20landing%20page/summer-collection/cold-fashion-man-women_3x.jpg"
-            alt="sc-image"
+            src="~/assets/img/africanPrint.jpg"
+            alt="Photo of an africn woman in an african print head gear by Oladimeji Odunsi on Unsplash"
           >
+          <a
+            style="background-color:#F2306F;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
+            href="https://unsplash.com/@oladimeg?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Download free do whatever you want high-resolution photos from Oladimeji Odunsi"
+          ><span style="display:inline-block;padding:2px 3px"><svg
+            xmlns="http://www.w3.org/2000/svg"
+            style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white"
+            viewBox="0 0 32 32"
+          >
+            <title>unsplash-logo</title>
+            <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z" />
+          </svg></span><span style="display:inline-block;padding:2px 3px">Oladimeji Odunsi</span></a>
         </div>
       </div>
     </div>
@@ -30,8 +46,6 @@
 
 #summer-collection .container {
   margin: 0 auto;
-  width: 80%;
-  background-color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,10 +58,10 @@
   padding-bottom: 2rem;
 }
 
-#summer-collection .container .sc-content h1 {
+#summer-collection .container .sc-content h2 {
   font-family: "Franklin Gothic Medium";
   color: #000000;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 800;
   letter-spacing: 1rem;
   line-height: 6rem;
@@ -56,17 +70,15 @@
 }
 
 #summer-collection .container .sc-content p.description {
-  font-family: Cambria;
-  color: rgba(89, 89, 89, 0.8);
   font-size: 1rem;
-  font-style: italic;
+  font-style: normal;
   line-height: 2rem;
   margin-bottom: 4vw;
   padding-right: 4rem;
 }
 
 #summer-collection .container .sc-content a {
-  border-bottom: 2px solid #a61458;
+  border-bottom: 2px solid $primaryColor;
   text-decoration: none;
   font-family: "Franklin Gothic Medium";
   color: #000000;
@@ -89,7 +101,7 @@
   height: auto;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 985px) {
   #summer-collection {
     width: 100vw;
     display: block;
@@ -101,33 +113,46 @@
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
   #summer-collection .container .sc-content {
     width: 100%;
-    padding: 8rem 0rem 0rem;
+    padding: 3rem 0rem 0rem;
   }
   #summer-collection .container .sc-media {
     width: 100%;
   }
-  #summer-collection .container .sc-content h1 {
-    font-size: 5.6vw;
+  #summer-collection .container .sc-content h2 {
+    font-size: 3vw;
     letter-spacing: 1rem;
-    line-height: 4rem;
+    line-height: 2rem;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  #summer-collection .container .sc-content h1 {
+  #summer-collection .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  #summer-collection .container .sc-content h2 {
     font-size: 5.6vw;
     letter-spacing: 0.6rem;
-    line-height: 2.4rem;
+    line-height: 3rem;
     margin-bottom: 1rem;
   }
 }
 
 @media only screen and (max-width: 480px) {
+  #summer-collection .container {
+    width: 80%;
+  }
   #summer-collection .container .sc-content p.description {
     font-size: 1rem;
     line-height: 1.8rem;

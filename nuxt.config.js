@@ -51,6 +51,10 @@ export default {
     src: '~/plugins/aos.js',
     mode: 'client'
   },
+  {
+    src: '~/plugins/v-owl-carousel',
+    ssr: false
+  },
   '~/plugins/vuelidate.js',
   '~/plugins/vue-scrollto.js',
   '~/plugins/globalComponents',

@@ -2,50 +2,50 @@
   <section class="siteFeatures d-flex ">
     <div class="container my-auto text-center">
       <div class="row my-auto">
-        <div class="col-md-3 featureBox">
+        <div class="col-md-3 col-sm-6 col-6 featureBox">
           <div class="featureBoxInner">
-            <img
-              src="~/assets/img/satisfactio.png"
-              alt="satisfactio"
-            >
+            <i class="far fa-question-circle fa-2x" />
             <div class="featureText">
-              <p><b>10% Original Items</b> is all we provide you.</p>
+              <h5>Original Items</h5>
+              <p class="d-none d-sm-block">
+                Only quality
+              </p>
             </div>
           </div>
         </div>
 
-        <div class="col-md-3 featureBox">
+        <div class="col-md-3 col-sm-6 col-6 featureBox">
           <div class="featureBoxInner">
-            <img
-              src="~/assets/img/satisfactio.png"
-              alt="satisfactio"
-            >
+            <i class="fas fa-smile fa-2x" />
             <div class="featureText">
-              <p><b>10% Original Items</b> is all we provide you.</p>
+              <h5>99% Satisfied</h5>
+              <p class="d-none d-sm-block">
+                Call us any time
+              </p>
             </div>
           </div>
         </div>
 
-        <div class="col-md-3 featureBox">
+        <div class="col-md-3 col-sm-6 col-6 featureBox">
           <div class="featureBoxInner">
-            <img
-              src="~/assets/img/satisfactio.png"
-              alt="satisfactio"
-            >
+            <i class="fas fa-undo-alt fa-2x" />
             <div class="featureText">
-              <p><b>10% Original Items</b> is all we provide you.</p>
+              <h5>EASY RETURNS</h5>
+              <p class="d-none d-sm-block">
+                30 Days
+              </p>
             </div>
           </div>
         </div>
 
-        <div class="col-md-3 featureBox">
+        <div class="col-md-3 col-sm-6 col-6 featureBox">
           <div class="featureBoxInner">
-            <img
-              src="~/assets/img/satisfactio.png"
-              alt="satisfactio"
-            >
+            <i class="fas fa-shipping-fast fa-2x" />
             <div class="featureText">
-              <p><b>10% Original Items</b> is all we provide you.</p>
+              <h5>SHIP GLOBALLY</h5>
+              <p class="d-none d-sm-block">
+                From 5 Days
+              </p>
             </div>
           </div>
         </div>
@@ -68,9 +68,6 @@
   background-size: cover;
   background-attachment: fixed;
   height: 300px;
-  img {
-    width: 20%;
-  }
 }
 
 .featureBox {
@@ -87,7 +84,9 @@
 .featureText {
   margin: auto;
   margin-top: 10px;
-  width: 80%;
+  h5 {
+    text-transform: uppercase;
+  }
 }
 
 .btn-secondary {
@@ -100,6 +99,37 @@
   &:hover {
     color: $primaryColor;
     background-color: white;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .siteFeatures {
+    margin: 60px 0 0 0;
+    background-image: url(~assets/img/callout.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .siteFeatures {
+    margin: 60px 0 0 0;
+    background-image: url(~assets/img/callout.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 500px;
+  }
+
+  .featureText {
+    margin: auto;
+    margin-top: 10px;
+    h5 {
+      text-transform: uppercase;
+      font-size: 1rem;
+    }
   }
 }
 </style>

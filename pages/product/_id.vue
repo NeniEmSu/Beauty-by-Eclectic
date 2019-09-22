@@ -1,7 +1,7 @@
 <template>
   <div
     id="individualProduct"
-    class="container"
+    class="container singleProduct"
   >
     <section class=" row">
       <section class=" col-md-5">
@@ -25,7 +25,7 @@
                   class="d-block img-fluid w-100"
                   width="1024"
                   height="480"
-                  src="~/assets/img/hairProduct.jpg"
+                  :src="`/products/${product.img}`"
                   alt="image slot"
                 >
               </template>
@@ -37,7 +37,7 @@
                   class="d-block img-fluid w-100"
                   width="1024"
                   height="350"
-                  src="~/assets/img/hair2.jpg"
+                  :src="`/products/${product.img}`"
                   alt="image slot"
                 >
               </template>
@@ -63,13 +63,15 @@
         </p>
         <h1>{{ product.name }}</h1>
         <p><b>Product code:</b> KJ552FFI</p>
-        <star-rating
+        <!-- <star-rating
           :rating="product.starrating"
-          :star-size="15"
-          :show-rating="false"
           active-color="#F2306F"
+          :star-size="15"
+          :show-rating="true"
+          :increment="0.5"
+          :star-points="[23,2, 14,17, 0,19, 10,34, 7,50, 23,43, 38,50, 36,34, 46,19, 31,17]"
           style="margin: 5px 0"
-        />
+        /> -->
         <h4 class="price">
           {{ product.price | currency }}
         </h4>
@@ -86,7 +88,7 @@
 
         <p class="quantity">
           <button
-            class="update-num"
+            class="update-num sub"
             @click="quantity > 0 ? quantity-- : quantity = 0"
           >
             -
@@ -96,7 +98,7 @@
             type="number"
           >
           <button
-            class="update-num"
+            class="update-num add"
             @click="quantity++"
           >
             +
@@ -127,9 +129,11 @@
       <!-- maybe an image of a person? -->
       <star-rating
         :rating="product.starrating"
-        active-color="#000"
+        active-color="#F2306F"
         :star-size="15"
-        :show-rating="false"
+        :show-rating="true"
+        :increment="0.5"
+        :star-points="[23,2, 14,17, 0,19, 10,34, 7,50, 23,43, 38,50, 36,34, 46,19, 31,17]"
         style="margin: 5px 0"
       />
       <p>{{ product.review }}</p>
@@ -155,7 +159,9 @@ export default {
     return {
       id: this.$route.params.id,
       quantity: 1,
-      tempcart: [] // this object should be the same as the json store object, with an additional param, quantity
+      tempcart: [], // this object should be the same as the json store object, with an additional param, quantity
+      slide: 0,
+      sliding: null
     }
   },
   computed: {
@@ -170,6 +176,12 @@ export default {
       item.quantity = this.quantity
       this.tempcart.push(item)
       this.$store.commit('addToCart', { ...item })
+    },
+    onSlideStart (slide) {
+      this.sliding = true
+    },
+    onSlideEnd (slide) {
+      this.sliding = false
     }
   }
 }
@@ -191,16 +203,45 @@ export default {
 input {
   width: 60px;
   font-size: 25px;
-  margin: 0 10px;
+  margin: 0 0px;
   padding: 5px 10px;
+  border: 1px solid #ddd;
+  font-weight: bold;
+  text-align: center;
 }
 
-.update-num {
-  background: black;
-  border-color: black;
+button.update-num {
+  background: $secondaryColor;
   color: white;
   font-size: 20px;
   width: 45px;
+  border: 1px solid $secondaryColor;
+  outline: none;
+
+  &.sub {
+    border-top-left-radius: 45px;
+    border-bottom-left-radius: 45px;
+  }
+
+  &.add {
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+  }
+
+  &:hover {
+    background-color: #fff;
+    color: $secondaryColor;
+  }
+}
+
+button.button.purchase {
+  border: 1px solid $primaryColor;
+  outline: none;
+
+  &:hover {
+    background-color: #fff;
+    color: $primaryColor;
+  }
 }
 
 .quantity {
@@ -221,14 +262,6 @@ input {
     padding-top: 20px;
   }
 
-  input {
-    border: 1px solid #ddd;
-    font-weight: bold;
-    height: 33px;
-    text-align: center;
-    width: 30px;
-  }
-
   .btn-primary {
     background-color: $primaryColor;
     color: #fff;
@@ -239,7 +272,7 @@ input {
 }
 
 .newArrivals {
-  background-color: green;
+  background-color: $secondaryColor;
   width: 50px;
   color: white;
   font-size: 12px;
